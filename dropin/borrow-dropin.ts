@@ -1,10 +1,10 @@
 /**
- * borrow-dropin.ts — BORROW the estate's proven MCP drop-in wiring pattern
- * (from estate-mcp-dropin-ship / mcp-dropin-guide) into eidos.
+ * borrow-dropin.ts — BORROW the Pens's proven MCP drop-in wiring pattern
+ * (from Pens-mcp-dropin-ship / mcp-dropin-guide) into eidos.
  *
- * The estate already SHIPS drop-ins the same way every time — that IS the
+ * The Pens already SHIPS drop-ins the same way every time — that IS the
  * pattern, and it lives in:
- *   - managed skill `estate-mcp-dropin-ship` (SSOT: estate/docs/mcp-guide-thresher.md)
+ *   - managed skill `Pens-mcp-dropin-ship` (SSOT: Pens/docs/mcp-guide-thresher.md)
  *   - `mcp-dropin-guide` R-3xx (thresher mcp_config.json registration)
  *   - the 27 parented products' bunfigs + the 132 infra services in ports.env
  *
@@ -28,12 +28,12 @@ export interface DropinSpec {
   mcpPath?: string;    // default "/mcp"
 }
 
-const PORTS_ENV = "/home/toxic/pens/estate/config/ports.env";
-const PITCHFORK = "/home/toxic/pens/estate/pitchfork.toml";
-// live thresher config — the estate clone, NOT the stale ranch mirror
-const THRESHER = "/home/toxic/pens/estate/ranch/thresher/mcp_config.json";
+const PORTS_ENV = "/home/toxic/pens/Pens/config/ports.env";
+const PITCHFORK = "/home/toxic/pens/Pens/pitchfork.toml";
+// live thresher config — the Pens clone, NOT the stale ranch mirror
+const THRESHER = "/home/toxic/pens/Pens/ranch/thresher/mcp_config.json";
 
-/** Next free port suggestion in the estate 25xxx range. */
+/** Next free port suggestion in the Pens 25xxx range. */
 export function suggestFreePort(existing: number[] = []): number {
   const used = new Set(existing);
   for (let p = 25200; p < 25299; p++) if (!used.has(p)) return p;

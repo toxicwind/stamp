@@ -2,7 +2,7 @@
 /**
  * src/scaffold-services.ts — drop-in infra-service wiring for the bun scaffold.
  *
- * A "drop-in" is an estate infra service a scaffolded product can connect to.
+ * A "drop-in" is an Pens infra service a scaffolded product can connect to.
  * They are DISCOVERED, not hardcoded:
  *   - config/ports.env (the numeric SSOT) — every *_PORT service
  *   - pitchfork.toml      — the supervised daemon set
@@ -13,7 +13,7 @@
  */
 import { existsSync, readFileSync } from "node:fs";
 
-const PORTS_ENV = "/home/toxic/pens/estate/config/ports.env";
+const PORTS_ENV = "/home/toxic/pens/Pens/config/ports.env";
 
 export interface DropinService {
   id: string;
@@ -61,7 +61,7 @@ export function discoverDropins(portsEnvText?: string): DropinService[] {
   const out: DropinService[] = [];
   for (const [name, port] of Object.entries(ports)) {
     const id = baseServiceId(name);
-    const meta = HINTS[id] ?? { kind: "http" as const, hint: "estate service — see pen docs" };
+    const meta = HINTS[id] ?? { kind: "http" as const, hint: "Pens service — see pen docs" };
     out.push({
       id,
       kind: meta.kind,

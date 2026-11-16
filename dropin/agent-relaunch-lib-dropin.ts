@@ -4,7 +4,7 @@
  *
  * Ground truth doctrine: docs lie, /proc wins (eidos AGENTS.md rule 6).
  * Discovery = pitchfork state + /proc cmdline sweep. Diagnosis = root-cause
- * classes mined from the estate's anomaly program (#41 dir-ENOENT, #43 mise,
+ * classes mined from the Pens's anomaly program (#41 dir-ENOENT, #43 mise,
  * #5 front-door-vs-exec, #72 credit strikes, #48 ghost lease).
  *
  * USAGE:
@@ -125,10 +125,10 @@ export function agentRelaunch() {
 				let fix = "restart via pitchfork";
 
 				const run = d.run ?? "";
-				if (run.includes("/home/toxic/estate/")) {
+				if (run.includes("/home/toxic/pens/Pens/")) {
 					rootCause = "ghost-path";
 					detail = `run rooted at banned ghost: ${run.slice(0, 80)}`;
-					fix = "repoint to /home/toxic/pens/estate + restart";
+					fix = "repoint to /home/toxic/pens/Pens + restart";
 				} else if (run.includes("mise ") ) {
 					rootCause = "config-error";
 					detail = "mise pre-spawn (anomaly #43 class)";
@@ -171,7 +171,7 @@ export function agentRelaunch() {
 
 		/**
 		 * Queue-aware relaunch: when the lane is concurrency-limited (429
-		 * concurrency_limit_exceeded — the estate's most common inference stall),
+		 * concurrency_limit_exceeded — the Pens's most common inference stall),
 		 * the relaunch QUEUES with backoff instead of hammering. The fallback
 		 * chains must never retry-storm a limited lane.
 		 */

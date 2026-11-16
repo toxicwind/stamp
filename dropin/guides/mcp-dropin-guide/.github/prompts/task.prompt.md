@@ -33,7 +33,7 @@ Proof: `<GATE_CMD>` - the gate must flag the Avoid case and pass the Correct cas
 
 ## Task 4 - Commit with rule citation
 Commit message body MUST cite the rule, per CONTRIBUTING.md:
-`Enforce R-NNN in <area>. Derivation: <upstream|estate-original>.`
+`Enforce R-NNN in <area>. Derivation: <upstream|Pens-original>.`
 Push only after every gate is green; you hold synthesis authority, not release
 authority - final merge is the human's (SDAD).
 

@@ -365,10 +365,10 @@ ${penName}/
 
 # ${penTitle}
 
-**pens/${penName}** — one of the estate's pens. Every pen is a thin
+**pens/${penName}** — one of the Pens's pens. Every pen is a thin
 coordinator: \`products/\` for peer standalone checkouts, \`docs/\` for
 pen-owned documentation, \`*-guide/\` for standalone guide repos, and a
-\`bin/\` entrypoint surface pinned by the estate-ops manifest.
+\`bin/\` entrypoint surface pinned by the Pens-ops manifest.
 
 <p align="center">${toc}</p>
 
@@ -386,11 +386,11 @@ ${docsSection}
 ## ⚙️ Tooling
 
 - **bin surface**: entrypoints symlinked into \`~/.local/bin\`, pinned by the
-  estate-ops manifest and verified by \`bin-verify.sh\`. A broken link is
+  Pens-ops manifest and verified by \`bin-verify.sh\`. A broken link is
   a **FAIL, never a WARN**.
 - **README**: generated from the pen's actual product set by
   \`bun bin/readme-gen.ts\` (Bun-native, idempotent).
-- **SSOT**: config surfaces import into \`estate/config/<pen>\` via
+- **SSOT**: config surfaces import into \`Pens/config/<pen>\` via
   \`bin/ssot-sync.sh\` (secretsmith keyring is the secret SSOT).
 
 ## 📐 Conventions
@@ -402,7 +402,7 @@ ${docsSection}
 
 ## 🛡 License
 
-Estate internal — all rights reserved.
+Pens internal — all rights reserved.
 `;
 }
 

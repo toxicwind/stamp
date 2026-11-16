@@ -21,13 +21,13 @@ const META = [
 	"AGENTS.md",
 	"pitchfork.toml",
 ] as const;
-const GHOST = "/home/toxic/estate";
+const GHOST = "/home/toxic/pens/Pens";
 
 let overall = 0;
 const pens =
 	process.argv.length > 2
 		? process.argv.slice(2)
-		: ["estate", "geode", "barn", "ranch", "olympus"];
+		: ["Pens", "geode", "barn", "ranch", "olympus"];
 
 function countFiles(dir: string, depth = 0): number {
 	if (depth > 4) return 0;

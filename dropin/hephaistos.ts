@@ -18,8 +18,8 @@
 import { discoverDropins, infraDropins } from "../src/scaffold-services.ts";
 import { suggestFreePort } from "./borrow-dropin.ts";
 
-const PITCHFORK = "/home/toxic/pens/estate/pitchfork.toml";
-const THRESHER = "/home/toxic/pens/estate/ranch/thresher/mcp_config.json";
+const PITCHFORK = "/home/toxic/pens/Pens/pitchfork.toml";
+const THRESHER = "/home/toxic/pens/Pens/ranch/thresher/mcp_config.json";
 
 export interface HephaistosDropinSpec {
   name: string;              // product name → <name>-mcp daemon
@@ -29,7 +29,7 @@ export interface HephaistosDropinSpec {
   namespacePrefix?: string;  // MCP tool namespace prefix, default the product name
 }
 
-/** Next free port suggestion in the estate 25xxx range, avoiding used ports. */
+/** Next free port suggestion in the Pens 25xxx range, avoiding used ports. */
 export function suggestFreePort(existing: number[] = []): number {
   const used = new Set(existing);
   for (let p = 25200; p < 25299; p++) if (!used.has(p)) return p;

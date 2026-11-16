@@ -4,16 +4,16 @@
 #
 # Usage: r503-forge.sh <root-dir> [extra --globs ...]
 # Exit 0 = zero findings. Exit 1 = findings (each printed as evidence).
-# Requires: pattern-forge (forge) on PATH or at its estate location, ast-grep
+# Requires: pattern-forge (forge) on PATH or at its Pens location, ast-grep
 # resolvable per forge's audit.ts ($AST_GREP_BIN, ~/.local/bin, PATH).
 set -uo pipefail
 
 ROOT="${1:?usage: r503-forge.sh <root-dir> [globs...]}"
 shift || true
 
-# Name de-conflict: /usr/bin/forge is the BUILD DAEMON (pitchfork estate/forge).
+# Name de-conflict: /usr/bin/forge is the BUILD DAEMON (pitchfork Pens/forge).
 # This script needs the pattern-forge CLI (forge audit = ast-grep verification).
-FORGE="${FORGE_BIN:-/home/toxic/pens/estate/skills/pattern-forge/bin/forge.ts}"
+FORGE="${FORGE_BIN:-/home/toxic/pens/Pens/skills/pattern-forge/bin/forge.ts}"
 if ! command -v "$FORGE" >/dev/null 2>&1 && [[ ! -x "$FORGE" ]]; then
   echo "pattern-forge not found (set FORGE_BIN)" >&2
   exit 2

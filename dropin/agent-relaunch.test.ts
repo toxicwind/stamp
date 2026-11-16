@@ -7,7 +7,7 @@ describe("agent-relaunch dropin — daemon-aware relaunch (FAILS FIRST)", () => 
     const r = await rel.discover();
     expect(r.isOk()).toBe(true);
     const daemons = r.value;
-    expect(daemons.length).toBeGreaterThan(50); // 90+ pitchfork daemons estate-wide
+    expect(daemons.length).toBeGreaterThan(50); // 90+ pitchfork daemons Pens-wide
     // every daemon has ground-truth fields
     for (const d of daemons.slice(0, 5)) {
       expect(d.id).toBeTruthy();
@@ -19,7 +19,7 @@ describe("agent-relaunch dropin — daemon-aware relaunch (FAILS FIRST)", () => 
     const rel = agentRelaunch();
     const r = await rel.discover();
     const sick = r.value.filter((d) => d.status !== "running");
-    expect(sick.length).toBeGreaterThan(0); // the estate always has some
+    expect(sick.length).toBeGreaterThan(0); // the Pens always has some
     const diag = await rel.diagnose(sick.slice(0, 3));
     expect(diag.isOk()).toBe(true);
     for (const d of diag.value) {

@@ -1,6 +1,6 @@
 #!/usr/bin/env bun
 /**
- * manifest-sync.ts — regenerate the estate bin manifest + verify all links.
+ * manifest-sync.ts — regenerate the Pens bin manifest + verify all links.
  * TS port of manifest-sync.sh.
  *
  * Usage: bun manifest-sync.ts
@@ -9,7 +9,7 @@ import { existsSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 
 const ESTATE_OPS =
-	process.env.ESTATE_OPS ?? "/home/toxic/pens/barn/estate-ops";
+	process.env.ESTATE_OPS ?? "/home/toxic/pens/barn/Pens-ops";
 const GEN = join(ESTATE_OPS, "bin", "manifest-gen.py");
 const VERIFY = join(ESTATE_OPS, "bin-verify.sh");
 const MANIFEST = join(ESTATE_OPS, "bin", "manifest.yaml");

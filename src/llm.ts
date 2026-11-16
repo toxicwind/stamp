@@ -1,7 +1,7 @@
 /**
  * src/llm.ts — deepseek v4 flash via FreeInference, proven live.
  *
- * Facts locked in from estate docs/freeinference-provider.md + a live 200:
+ * Facts locked in from Pens docs/freeinference-provider.md + a live 200:
  *   base URL      https://freeinference.org/v1/chat/completions   (NOT /api/v1)
  *   auth          Authorization: Bearer $FREEINFERENCE_API_KEY
  *   model         deepseek-v4-flash (1.0M ctx / 393K max out)

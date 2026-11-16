@@ -44,7 +44,7 @@ One minimal pair, or an explicit "not executable" note naming the artifact that
 enforces the clause instead.
 
 ## Provenance
-Derivation: <upstream source, or `estate-original`>. Adjacent rules: R-xxx
+Derivation: <upstream source, or `Pens-original`>. Adjacent rules: R-xxx
 (relation: strengthens | contradicts | orthogonal).
 
 ## Non-goals

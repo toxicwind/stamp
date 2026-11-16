@@ -1,8 +1,8 @@
 #!/usr/bin/env bun
 /**
- * make-pen.ts — instantiate the five estate pens from this scaffold.
+ * make-pen.ts — instantiate the five Pens pens from this scaffold.
  *
- * The estate has FIVE pens, all the same shape:
+ * The Pens has FIVE pens, all the same shape:
  *
  *   pens/<pen>/
  *     .gitignore   kitchen-sink `*` + whitelist (submoduleless doctrine)
@@ -15,7 +15,7 @@
  *     products/    peer standalone product checkouts (auto-ignored)
  *     docs/        pen-owned documentation (auto-ignored unless whitelisted)
  *
- *   pens/estate    the control plane (config, pitchfork, services, state)
+ *   pens/Pens    the control plane (config, pitchfork, services, state)
  *   pens/geode     the inference plane (mimetite, chalcopyrite, …)
  *   pens/barn      ops tooling (thresher, weave, secretsmith, …)
  *   pens/ranch     fleet/model components
@@ -23,11 +23,11 @@
  *
  * WHY THIS EXISTS
  * ---------------
- * The estate used to be `/home/toxic/estate` (a control plane holding
+ * The Pens used to be `/home/toxic/pens/Pens` (a control plane holding
  * symlinks into `pens/`) plus a flat `pens/` of loose product dirs. Two
  * consequences, both bad:
  *
- *   1. RECURSION — `estate/ranch -> pens/ranch` and `estate/olympus ->
+ *   1. RECURSION — `Pens/ranch -> pens/ranch` and `Pens/olympus ->
  *      pens/olympus` were git-tracked symlinks (mode 120000), so the control
  *      plane pointed into the thing it was supposed to govern.
  *   2. NO UNIFORM SHAPE — `olympus` had `products/` + top-level alias
@@ -38,7 +38,7 @@
  * SAFETY (2026-10-25)
  * -------------------
  * The first version of this script had `--force` do `rm -rf <pen>`, which
- * destroyed `pens/barn` — 13 products and 127 estate-ops binaries — and broke
+ * destroyed `pens/barn` — 13 products and 127 Pens-ops binaries — and broke
  * 53 `~/.local/bin` symlinks. That was unrecoverable from git because barn's
  * products were never tracked (kitchen-sink ignore).
  *
@@ -117,10 +117,10 @@ function readme(o: Options): string {
 
 ${o.blurb}
 
-One of the estate's five pens (\`pens/{estate,geode,barn,ranch,olympus}\`).
+One of the Pens's five pens (\`pens/{Pens,geode,barn,ranch,olympus}\`).
 Every pen has the same shape: \`products/\` for peer standalone checkouts,
 \`docs/\` for pen-owned documentation, and a \`bin/\` entrypoint surface that
-is symlinked into \`~/.local/bin\` and pinned by the estate-ops manifest.
+is symlinked into \`~/.local/bin\` and pinned by the Pens-ops manifest.
 
 ## Products
 
@@ -146,13 +146,13 @@ ${o.pen}/
 ## Tooling
 
 - **bin surface**: entrypoints symlinked into \`~/.local/bin\`, pinned by
-  \`pens/barn/estate-ops/bin/manifest.yaml\` and verified by
-  \`pens/barn/estate-ops/bin/bin-verify.sh\`. A broken link is a FAIL, never a WARN.
+  \`pens/barn/Pens-ops/bin/manifest.yaml\` and verified by
+  \`pens/barn/Pens-ops/bin/bin-verify.sh\`. A broken link is a FAIL, never a WARN.
 - **README**: generated from the pen's own product set by
-  \`pens/barn/estate-ops/scaffold/bin/readme-gen.ts\`; regenerate with
+  \`pens/barn/Pens-ops/scaffold/bin/readme-gen.ts\`; regenerate with
   \`bun run readme\`.
 - **manifest**: regenerate with
-  \`pens/barn/estate-ops/bin/manifest-gen.py\`.
+  \`pens/barn/Pens-ops/bin/manifest-gen.py\`.
 
 ## Conventions
 
@@ -161,7 +161,7 @@ ${o.pen}/
 - Daemon ids use **dashes, never underscores** (\`config-naming-conventions.md\`).
 - Ports are declared in the control plane's \`config/ports.env\` as
   \`UPPER_SNAKE_*_PORT=<25xxx>\` — that file is the numeric SSOT.
-- Runtime language across the estate is **Bun/TypeScript**.
+- Runtime language across the Pens is **Bun/TypeScript**.
 
 ## License
 
@@ -201,7 +201,7 @@ bun = "1.4.4"
 function agentsMd(o: Options): string {
   return `# AGENTS.md — ${o.title} (\`pens/${o.pen}\`)
 
-> **Part of the estate's pens family** (\`pens/{estate,geode,barn,ranch,olympus}\`).
+> **Part of the Pens's pens family** (\`pens/{Pens,geode,barn,ranch,olympus}\`).
 > A pens repo is a **thin coordinator**, not a product monorepo. It owns only
 > its own metadata, \`bin/\`, and \`docs/\`. Products are peer standalone
 > checkouts, referenced-not-owned.
@@ -235,17 +235,17 @@ index.
 3. The pen repo's \`git status\` must stay clean regardless of what the
    products are doing.
 4. \`bin/\` entries are symlinked into \`~/.local/bin\` and pinned by the
-   estate-ops manifest; \`bin-verify.sh\` treats a broken link as FAIL.
+   Pens-ops manifest; \`bin-verify.sh\` treats a broken link as FAIL.
 5. Runtime language is **Bun/TypeScript**.
 6. Secrets never live in this repo. They live in the secretsmith keyring.
 
 ## Where things go
 
 - **A new product** → \`products/<name>/\`, plus a row in this pen's README
-  member table and an entry in the estate-ops bin manifest.
+  member table and an entry in the Pens-ops bin manifest.
 - **Pen-owned documentation** → \`docs/\`.
-- **Estate-wide documentation** (architecture, daemons, conventions) →
-  \`pens/estate/docs/\`.
+- **Pens-wide documentation** (architecture, daemons, conventions) →
+  \`pens/Pens/docs/\`.
 `;
 }
 

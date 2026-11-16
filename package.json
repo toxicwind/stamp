@@ -1,9 +1,9 @@
 {
-  "name": "@estate/eidos",
+  "name": "@Pens/eidos",
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "Maximal Bun scaffold: copy-paste package.json + bunfig.toml + gate (validate/test:coverage/typecheck) + a freeinference deepseek completions helper for applying it across estate projects.",
+  "description": "Maximal Bun scaffold: copy-paste package.json + bunfig.toml + gate (validate/test:coverage/typecheck) + a freeinference deepseek completions helper for applying it across Pens projects.",
   "license": "MIT",
   "engines": {
     "bun": ">=1.4.4",

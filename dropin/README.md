@@ -28,7 +28,7 @@ and gets working capability with zero engine wiring.
 
 ## model-matrix — why THOSE five models
 
-The five lanes are the estate's **live provider families**, picked from the
+The five lanes are the Pens's **live provider families**, picked from the
 rhodochrosite router's `/v1/models` (505 models live, verified 2026-10-30):
 
 | Family | Model | Why |
@@ -36,14 +36,14 @@ rhodochrosite router's `/v1/models` (505 models live, verified 2026-10-30):
 | openai-family | `openai/gpt-oss-20b` | The only live gpt-family id on the router (gpt-6.1-terra ids exist on openrouter but route as `:batch` variants; gpt-oss-20b is the stable completion lane) |
 | google-family | `google/diffusiongemma-26b-a4b-it` | The live google/ id — the EAP gemini lanes (25109) are separate providers, not router-native; diffusiongemma answered the probe |
 | deepseek-family | `deepseek/deepseek-v4.1-flash-1017` | Live on both openrouter (v4.1-flash-1017) and nvidia (v4.1-flash); the router-native id is the openrouter one |
-| glm-family | `z-ai/glm-5.3-flash` | The estate's workhorse (this session's own model); proven live |
+| glm-family | `z-ai/glm-5.3-flash` | The Pens's workhorse (this session's own model); proven live |
 | nvidia-family | `nvidia/llama-3.1-nemotron-safety-guard-8b-v3` | Nemotron family presence on the router; safety-guard answered with the lowest latency of the nemotron ids probed |
 
 **Did they work?** The 25-cell matrix probe (5×5) was run live against the
 router; per-cell results (ok/err, latency, tokens) are the matrix output. The
 glm lane is verified by construction (this session runs on it). The others
 are verified by the probe itself: a lane that 429s, 502s, or times out FAILS
-its cell — that is the contract. Dead lanes are Estate anomaly #72's
+its cell — that is the contract. Dead lanes are Pens anomaly #72's
 per-model credit-strike territory: the matrix result feeds the strike ledger
 rather than silently passing.
 

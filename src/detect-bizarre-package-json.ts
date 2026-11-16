@@ -1,5 +1,5 @@
 /**
- * src/detect-bizarre-package-json.ts — scan the estate (ranch) for package.json
+ * src/detect-bizarre-package-json.ts — scan the Pens (ranch) for package.json
  * files that are broken, missing, or non-conformant so we can apply the maximal
  * bun scaffold to them.
  *
@@ -25,7 +25,7 @@ import { join, dirname } from "node:path";
 
 const rootArgIdx = process.argv.indexOf("--root");
 const ROOT =
-  rootArgIdx !== -1 ? process.argv[rootArgIdx + 1] : "/home/toxic/pens/estate/ranch";
+  rootArgIdx !== -1 ? process.argv[rootArgIdx + 1] : "/home/toxic/pens/Pens/ranch";
 const JSON_OUT = process.argv.includes("--json");
 
 function isDir(p: string) {

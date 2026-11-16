@@ -7,10 +7,10 @@ import {
   nextFreePort, generateMiseToml, generatePitchforkStanza, generateDropinEnv, emitRuntimeWiring,
 } from "../src/eidos-runtime.ts";
 
-const REAL = require("fs").readFileSync("/home/toxic/pens/estate/config/ports.env", "utf8");
+const REAL = require("fs").readFileSync("/home/toxic/pens/Pens/config/ports.env", "utf8");
 
 describe("eidos runtime wiring (mise + pitchfork aware)", () => {
-  it("1. nextFreePort finds a free estate port from the real SSOT", () => {
+  it("1. nextFreePort finds a free Pens port from the real SSOT", () => {
     const p = nextFreePort(REAL);
     expect(p).toBeGreaterThanOrEqual(25200);
     expect(p).toBeLessThanOrEqual(25299);
@@ -18,7 +18,7 @@ describe("eidos runtime wiring (mise + pitchfork aware)", () => {
   });
   it("2. generateMiseToml emits the gate set + ports.env SSOT import", () => {
     const toml = generateMiseToml({ name: "eidos-demo", entry: "src/index.ts" });
-    expect(toml).toContain(`_.file = "/home/toxic/pens/estate/config/ports.env"`);
+    expect(toml).toContain(`_.file = "/home/toxic/pens/Pens/config/ports.env"`);
     expect(toml).toContain("[tasks.typecheck]");
     expect(toml).toContain("[tasks.validate]");
     expect(toml).toContain('bun = "latest"');

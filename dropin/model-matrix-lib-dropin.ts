@@ -1,7 +1,7 @@
 /**
  * model-matrix-lib-dropin.ts — 5-lane model contract matrix as an eidos
  * drop-in library. ANY test can assert "same call, same behavior" across the
- * estate's five provider families via the live router (rhodochrosite :25193).
+ * Pens's five provider families via the live router (rhodochrosite :25193).
  *
  * The five lanes (live ids verified 2026-10-30 from the router /v1/models):
  *   openai-family   — openai/gpt-oss-20b

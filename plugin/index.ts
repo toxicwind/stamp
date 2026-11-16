@@ -38,12 +38,12 @@ export default definePlugin({
       tools: [
         {
           id: 'discover_dropins',
-          summary: 'List every estate infra drop-in as BUN_<NAME>_PORT connection vars (from ports.env).',
+          summary: 'List every Pens infra drop-in as BUN_<NAME>_PORT connection vars (from ports.env).',
           register: async (server) => {
             server.registerTool(
               `${prefix}_discover_dropins`,
               {
-                description: 'Discover estate infra drop-ins (qdrant/hindsight/kafka/redis + all *_PORT services) as connection env.',
+                description: 'Discover Pens infra drop-ins (qdrant/hindsight/kafka/redis + all *_PORT services) as connection env.',
                 inputSchema: z.object({
                   infraOnly: z.boolean().optional().describe('only the four infra tiers'),
                 }),

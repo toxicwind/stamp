@@ -5,7 +5,7 @@
 import { describe, expect, it } from "bun:test";
 import { discoverDropins, deviceDropins, infraDropins } from "../src/scaffold-services.ts";
 
-const REAL = require("fs").readFileSync("/home/toxic/pens/estate/config/ports.env", "utf8");
+const REAL = require("fs").readFileSync("/home/toxic/pens/Pens/config/ports.env", "utf8");
 
 describe("device tier", () => {
   it("1. flotilla is a DEVICE-kind drop-in (shizuku-backed transport)", () => {

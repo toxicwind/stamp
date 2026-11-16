@@ -3,8 +3,8 @@
  * lint-paths.ts — ghost-path lease enforcement for a pen (or all pens).
  * TS port of lint-paths.sh.
  *
- * FAILs if any file references /home/toxic/estate (the banned ghost path)
- * or if /home/toxic/estate exists in ANY form. Exit 1 = violation.
+ * FAILs if any file references /home/toxic/pens/Pens (the banned ghost path)
+ * or if /home/toxic/pens/Pens exists in ANY form. Exit 1 = violation.
  *
  * Usage: bun lint-paths.ts [pen...]   (default: all five pens)
  */
@@ -12,7 +12,7 @@ import { existsSync, readdirSync, readFileSync, statSync } from "node:fs";
 import { join, extname } from "node:path";
 
 const PENS_DIR = "/home/toxic/pens";
-const GHOST = "/home/toxic/pens/estate";
+const GHOST = "/home/toxic/pens/Pens";
 const TEXT_EXTS = new Set([
 	".md", ".ts", ".tsx", ".js", ".mjs", ".json", ".yaml", ".yml", ".toml",
 	".sh", ".py", ".jsonc", ".envrc", ".html", ".css", ".svg", ".txt",
@@ -26,7 +26,7 @@ let fail = 0;
 
 if (existsSync(GHOST)) {
 	console.log(
-		"FAIL: /home/toxic/estate EXISTS (single-truth lease violation) — remove it and find the re-creator",
+		"FAIL: /home/toxic/pens/Pens EXISTS (single-truth lease violation) — remove it and find the re-creator",
 	);
 	fail = 1;
 }
@@ -53,7 +53,7 @@ function* walk(dir: string, depth = 0): Generator<string> {
 const pens =
 	process.argv.length > 2
 		? process.argv.slice(2)
-		: ["estate", "geode", "barn", "ranch", "olympus"];
+		: ["Pens", "geode", "barn", "ranch", "olympus"];
 
 for (const pen of pens) {
 	const root = join(PENS_DIR, pen);
@@ -63,7 +63,7 @@ for (const pen of pens) {
 		try {
 			if (statSync(file).size > 2_000_000) continue;
 			const c = readFileSync(file, "utf8");
-			if (c.includes("/home/toxic/pens/estate") && !c.includes("/home/toxic/pens/estate")) {
+			if (c.includes("/home/toxic/pens/Pens") && !c.includes("/home/toxic/pens/Pens")) {
 				if (hits === 0) console.log(`=== ${pen} ===`);
 				console.log(`  FAIL ghost ref: ${file}`);
 				hits++;

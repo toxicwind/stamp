@@ -13,7 +13,7 @@ area. Renumbering is forbidden - downstream commits cite rule ids.
 
 ## Adding a rule
 
-- Cite the upstream you derive it from, or mark `estate-original`.
+- Cite the upstream you derive it from, or mark `Pens-original`.
 - Include a Correct / Avoid pair (or an explicit "not executable" note naming
   the enforcement artifact instead: linter code, CI job, validator check).
 - Include a Why paragraph that names the failure mode the rule prevents.

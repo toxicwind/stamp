@@ -41,7 +41,7 @@ describe("reactive-error plugin — the success case", () => {
 			["eval", "Eval cell aborted"], // kernel-death
 			["read", "PermissionError: TAU_DENIED_TOOLS: 'find' is denied by tools.approval"], // tool-deny
 			["edit", "No operations were applied — Failed to find expected lines"], // patch-miss
-			["eval", "TAU_DENIED_TOOLS: 'bash' is denied (ESTATE-ANOMALY-37)"], // tool-deny
+			["eval", "TAU_DENIED_TOOLS: 'bash' is denied (Pens-ANOMALY-37)"], // tool-deny
 		];
 		for (const [tool, err] of cases) {
 			// fresh instance per case — the rate limiter is per-family and would

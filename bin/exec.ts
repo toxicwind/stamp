@@ -18,7 +18,7 @@ import { join, basename } from "node:path";
 import { spawnSync } from "node:child_process";
 
 const PENS_ROOT = "/home/toxic/pens";
-const PENS = ["estate", "geode", "barn", "ranch", "olympus"];
+const PENS = ["Pens", "geode", "barn", "ranch", "olympus"];
 
 async function isDir(p: string): Promise<boolean> {
   try {

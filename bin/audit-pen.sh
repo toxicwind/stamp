@@ -5,7 +5,7 @@
 # Usage: audit-pen.sh [pen...]   (default: all five pens)
 set -u
 PENS_DIR="/home/toxic/pens"
-PENS="${*:-estate geode barn ranch olympus}"
+PENS="${*:-Pens geode barn ranch olympus}"
 META=".gitignore README.md LICENSE package.json mise.toml AGENTS.md pitchfork.toml"
 overall=0
 

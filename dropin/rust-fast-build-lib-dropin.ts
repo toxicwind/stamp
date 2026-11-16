@@ -1,5 +1,5 @@
 /**
- * rust-fast-build-lib-dropin.ts — apply the estate's fast Rust build profile
+ * rust-fast-build-lib-dropin.ts — apply the Pens's fast Rust build profile
  * to a target Cargo.toml. Pattern-borrowed from the rhodochrosite proxy build
  * (verified live 2026-11-02: cold 6m10s, incremental 40s with mold vs the old
  * fat-LTO single-codegen-unit 2-5min lock; cc 1.2.65 -> 1.11.0 fixed the
@@ -19,7 +19,7 @@ import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 
 /** The committed template = the verified rhodochrosite proxy fast profile. */
-export const RUST_FAST_BUILD_TEMPLATE = `# eidos rust-fast-build drop-in — estate fast-iteration profile (verified 2026-11-02).
+export const RUST_FAST_BUILD_TEMPLATE = `# eidos rust-fast-build drop-in — Pens fast-iteration profile (verified 2026-11-02).
 # Thin LTO + 8 codegen units + opt-level=2: the iteration loop (~40s incremental
 # with mold) instead of the fat-LTO single-unit 2-5min lock. The final deploy
 # binary stays under [profile.release]; release-fast is for daily loops.

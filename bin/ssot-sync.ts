@@ -1,9 +1,9 @@
 #!/usr/bin/env bun
 /**
  * ssot-sync.ts — import this pen's config files into
- * /home/toxic/pens/estate/config/<product> as the canonical SSOT (moving the
+ * /home/toxic/pens/Pens/config/<product> as the canonical SSOT (moving the
  * real file, symlinking back). TS port of ssot-sync.sh; delegates to the
- * estate-ops reconciler.
+ * Pens-ops reconciler.
  *
  * Usage: bun ssot-sync.ts
  */
@@ -15,7 +15,7 @@ const BIN = dirname(fileURLToPath(import.meta.url));
 const PENS_ROOT = join(BIN, "..", "..", "..");
 const SSOT_SCRIPT =
 	process.env.SSOT_SCRIPT ??
-	join(PENS_ROOT, "estate", "products", "estate-ops", "ssot-scaffold.sh");
+	join(PENS_ROOT, "Pens", "products", "Pens-ops", "ssot-scaffold.sh");
 
 if (existsSync(SSOT_SCRIPT)) {
 	const proc = Bun.spawn(["bash", SSOT_SCRIPT, "--apply"], {

@@ -80,7 +80,7 @@ const MINERAL = new Set([
 ]);
 const THEME_PEN: Array<[RegExp, string]> = [
 	[
-		/^(thresher|weave|flatbread|chute|gatehouse|forge|estate-ops|secretsmith|lookout|archguard|gemini-mcp|nativelink|estate-tailscale|rosec|gem-dredge|fanout)$/,
+		/^(thresher|weave|flatbread|chute|gatehouse|forge|Pens-ops|secretsmith|lookout|archguard|gemini-mcp|nativelink|Pens-tailscale|rosec|gem-dredge|fanout)$/,
 		"barn",
 	],
 	[
@@ -105,7 +105,7 @@ if (!pen) {
 }
 /** Control-plane pens: root dirs ARE live daemon homes (pitchfork dir/run refs
  * resolve absolute pens paths) — products/ migration is forbidden here. */
-const CONTROL_PLANE = new Set(["estate"]);
+const CONTROL_PLANE = new Set(["Pens"]);
 if (CONTROL_PLANE.has(pen)) {
 	console.error(
 		`reorganize-pen: "${pen}" is a control-plane pen — its root dirs are live\n` +

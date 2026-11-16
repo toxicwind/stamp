@@ -8,7 +8,7 @@ import {
   discoverDropins, infraDropins, parsePortsEnv, renderDropinsToml,
 } from "../src/scaffold-services.ts";
 
-const REAL = require("fs").readFileSync("/home/toxic/pens/estate/config/ports.env", "utf8");
+const REAL = require("fs").readFileSync("/home/toxic/pens/Pens/config/ports.env", "utf8");
 
 describe("parsePortsEnv", () => {
   it("1. parses *_PORT entries from the real SSOT (ignores others)", () => {
@@ -28,7 +28,7 @@ describe("parsePortsEnv", () => {
 describe("discoverDropins — the concept", () => {
   it("3. discovers EVERY *_PORT service, not a hardcoded 4", () => {
     const all = discoverDropins(REAL);
-    expect(all.length).toBeGreaterThan(10); // the estate has many services
+    expect(all.length).toBeGreaterThan(10); // the Pens has many services
     const ids = new Set(all.map((d) => d.id));
     expect(ids.has("qdrant")).toBe(true);
     expect(ids.has("hindsight")).toBe(true);

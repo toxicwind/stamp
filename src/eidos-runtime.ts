@@ -5,21 +5,21 @@
  * the bunfig).
  *
  * WHY: eidos (ex-bun-scaffold) only wrote bunfig.toml. But a bun product in
- * this estate has THREE runtime surfaces:
+ * this Pens has THREE runtime surfaces:
  *   bunfig.toml      the bun config (form)
  *   mise.toml        the toolchain + tasks (tools)
  *   pitchfork.toml   the supervised daemon stanza (process ground truth)
  *
  * This module emits all three from ONE product spec, borrowing the proven
- * estate patterns (pitchfork daemon shape from estate-mcp-dropin-ship; mise
- * task shape from estate/mise.toml tasks; both are discovery-driven —
+ * Pens patterns (pitchfork daemon shape from Pens-mcp-dropin-ship; mise
+ * task shape from Pens/mise.toml tasks; both are discovery-driven —
  * ports.env SSOT supplies the port, never hardcoded).
  */
 import { existsSync, readFileSync } from "node:fs";
 import { discoverDropins } from "./scaffold-services.ts";
 
-const PORTS_ENV = "/home/toxic/pens/estate/config/ports.env";
-const ESTATE_MISE = "/home/toxic/pens/estate/mise.toml";
+const PORTS_ENV = "/home/toxic/pens/Pens/config/ports.env";
+const ESTATE_MISE = "/home/toxic/pens/Pens/mise.toml";
 
 export interface EidosProductSpec {
   /** Product id (dashes, never underscores — pitchfork daemon-id convention). */
@@ -34,7 +34,7 @@ export interface EidosProductSpec {
   bun?: string;
 }
 
-/** Read the ports.env SSOT and find a free port in the estate range. */
+/** Read the ports.env SSOT and find a free port in the Pens range. */
 export function nextFreePort(portsEnvText?: string): number {
   const text = portsEnvText ?? (existsSync(PORTS_ENV) ? readFileSync(PORTS_ENV, "utf8") : "");
   const used = new Set(
