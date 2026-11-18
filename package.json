@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "Maximal Bun scaffold: copy-paste package.json + bunfig.toml + gate (validate/test:coverage/typecheck) + a freeinference deepseek completions helper for applying it across Pens projects.",
+  "description": "stamp \u2014 the CRUD engine for products and pens: create (make-pen/apply), read (audit/manifest), update (reorganize/rename), delete/ops (push-sweep/exec), all stamped with the maximal Bun scaffold (bunfig + gates).",
   "license": "MIT",
   "engines": {
     "bun": ">=1.4.4",
