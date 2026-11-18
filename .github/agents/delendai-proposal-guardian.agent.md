@@ -1,7 +1,7 @@
 ---
 name: delendai-proposal-guardian
 description: Proposal hygiene and planning
-tools: [read, search, edit, execute, todo, DelendAI:Pens-eidos/*]
+tools: [read, search, edit, execute, todo, DelendAI:Pens-stamp/*]
 user-invocable: false
 ---
 

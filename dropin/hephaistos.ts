@@ -1,9 +1,9 @@
 /**
- * dropin/hephaistos.ts — eidos product hosting a hephaistos MCP server.
+ * dropin/hephaistos.ts — stamp product hosting a hephaistos MCP server.
  *
  * Hephaistos (ergasterion/hephaistos) is itself an MCP server that loads
  * plugins (forge search/write/release, logs, memory, …) and serves them
- * over stdio or WSS. A product scaffolded by eidos can therefore expose
+ * over stdio or WSS. A product scaffolded by stamp can therefore expose
  * the whole hephaistos surface as its drop-in MCP surface — no raw node
  * server needed, just the borrowed drop-in wiring:
  *
@@ -38,7 +38,7 @@ export function suggestFreePort(existing: number[] = []): number {
 
 /** Borrowed ports.env stanza (R-301 owner-comment convention). */
 export function portsEnvBlock(spec: HephaistosDropinSpec): string {
-  return `# owner: ${spec.name} (${spec.name}-mcp hephaistos via eidos)\n${spec.name.toUpperCase()}_PORT=${spec.port}\n`;
+  return `# owner: ${spec.name} (${spec.name}-mcp hephaistos via stamp)\n${spec.name.toUpperCase()}_PORT=${spec.port}\n`;
 }
 
 /** Borrowed pitchfork monolith daemon stanza — runs hephaistos as the MCP server. */

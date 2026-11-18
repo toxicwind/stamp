@@ -1,6 +1,6 @@
 /**
  * tdd-gate-lib-dropin.ts — night-market's TDD/BDD Iron-Law gate, ported to
- * Bun/TS as an eidos drop-in library.
+ * Bun/TS as an stamp drop-in library.
  *
  * The Iron Law: NO IMPLEMENTATION WITHOUT A FAILING TEST FIRST.
  * Borrowed from claude-night-market/plugins/imbue/hooks/tdd_bdd_gate.py
@@ -8,7 +8,7 @@
  * is gated: implementation files require a co-located failing test.
  *
  * USAGE:
- *   import { tddGate } from "<eidos>/dropin/tdd-gate-lib-dropin.ts";
+ *   import { tddGate } from "<stamp>/dropin/tdd-gate-lib-dropin.ts";
  *   const verdict = tddGate({ path: "src/feature.ts", op: "write" });
  *   if (verison.blocked) writeTestFirst(verison.reason);
  */

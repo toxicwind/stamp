@@ -1,9 +1,9 @@
 #!/usr/bin/env bun
 /**
- * bin/emit-ast-validator.ts — eidos emits an ast-grep validator into a
+ * bin/emit-ast-validator.ts — stamp emits an ast-grep validator into a
  * scaffolded product (the r503-forge pattern from mcp-dropin-guide R-503).
  *
- * A product scaffolded by eidos gets:
+ * A product scaffolded by stamp gets:
  *   bin/sg/r503.ts.yml   — the ast-grep rule config for this product
  *   bin/ast-check.sh     — the machine gate: bun/ast-grep structural scan
  *
@@ -24,7 +24,7 @@ mkdirSync(join(target, "bin", "sg"), { recursive: true });
 const rule = `id: r503-no-process-cwd
 language: ts
 severity: warning
-message: "Do not read process.cwd() directly — the host resolves paths via ctx (eidos/hephaistos doctrine)."
+message: "Do not read process.cwd() directly — the host resolves paths via ctx (stamp/hephaistos doctrine)."
 rule:
   pattern: process.cwd()
 `;
@@ -32,7 +32,7 @@ rule:
 writeFileSync(join(target, "bin", "sg", "r503.ts.yml"), rule);
 
 const check = `#!/usr/bin/env bash
-# ast-grep structural gate (eidos-emitted, r503 pattern)
+# ast-grep structural gate (stamp-emitted, r503 pattern)
 set -e
 ROOT="\$(cd "\$(dirname "\${BASH_SOURCE[0]}")/.." && pwd)"
 command -v ast-grep >/dev/null || { echo "ast-grep missing — bun x @ast-grep/cli"; exit 2; }
@@ -43,4 +43,4 @@ exit \$rc
 `;
 writeFileSync(join(target, "bin", "ast-check.sh"), check, { mode: 0o755 });
 
-console.log(`eidos ast-validator emitted -> ${target}/bin/{sg/r503.ts.yml, ast-check.sh}`);
+console.log(`stamp ast-validator emitted -> ${target}/bin/{sg/r503.ts.yml, ast-check.sh}`);

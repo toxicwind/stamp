@@ -1,5 +1,5 @@
 /**
- * rig-skills-lib-dropin.ts — ring's specialized-agent skills as eidos
+ * rig-skills-lib-dropin.ts — ring's specialized-agent skills as stamp
  * knowledge drop-ins.
  *
  * ring (LerianStudio) ships 89 skills + 38 agents enforcing engineering

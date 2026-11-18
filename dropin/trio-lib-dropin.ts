@@ -1,9 +1,9 @@
 /**
  * trio-lib-dropin.ts — the trio code-intelligence engine as a portable
- * eidos drop-in library.
+ * stamp drop-in library.
  *
  * Trio lives at @geode/triphylite (pens/geode/products/triphylite). This
- * drop-in wraps its five-channel engine behind the eidos drop-in contract:
+ * drop-in wraps its five-channel engine behind the stamp drop-in contract:
  *   - discoverable (ports.env / package.json probing)
  *   - monadic results (neverthrow — the scaffold default drop-in)
  *   - consumer-agnostic: any geode mineral (ffs-diff, kleio, coreelec-mcp)
@@ -11,7 +11,7 @@
  *     wiring.
  *
  * USAGE (in a consumer):
- *   import { borrowTrio } from "<eidos>/dropin/trio-lib-dropin.ts";
+ *   import { borrowTrio } from "<stamp>/dropin/trio-lib-dropin.ts";
  *   const trio = borrowTrio(import.meta.url);   // engine resolved relative to consumer
  *   const res = await trio.search("playback.media", { root: "/some/dir", limit: 5 });
  *   res.match({ ok: (r) => use(r.hits), err: (e) => log(e.message) });

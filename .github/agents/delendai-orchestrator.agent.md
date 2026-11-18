@@ -1,7 +1,7 @@
 ---
 name: delendai-orchestrator
 description: Multi-agent orchestrator for delendai
-tools: [read, search, edit, execute, todo, agent, DelendAI:Pens-eidos/*]
+tools: [read, search, edit, execute, todo, agent, DelendAI:Pens-stamp/*]
 user-invocable: true
 ---
 

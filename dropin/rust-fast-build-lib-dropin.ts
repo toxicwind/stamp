@@ -19,7 +19,7 @@ import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 
 /** The committed template = the verified rhodochrosite proxy fast profile. */
-export const RUST_FAST_BUILD_TEMPLATE = `# eidos rust-fast-build drop-in — Pens fast-iteration profile (verified 2026-11-02).
+export const RUST_FAST_BUILD_TEMPLATE = `# stamp rust-fast-build drop-in — Pens fast-iteration profile (verified 2026-11-02).
 # Thin LTO + 8 codegen units + opt-level=2: the iteration loop (~40s incremental
 # with mold) instead of the fat-LTO single-unit 2-5min lock. The final deploy
 # binary stays under [profile.release]; release-fast is for daily loops.

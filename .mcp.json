@@ -1,6 +1,6 @@
 {
 	"mcpServers": {
-		"DelendAI:Pens-eidos": {
+		"DelendAI:Pens-stamp": {
 			"type": "stdio",
 			"command": "bunx",
 			"args": [
@@ -11,7 +11,7 @@
 				"--workspace",
 				".",
 				"--name",
-				"DelendAI:Pens-eidos"
+				"DelendAI:Pens-stamp"
 			]
 		}
 	}

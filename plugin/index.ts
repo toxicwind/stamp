@@ -1,5 +1,5 @@
 /**
- * plugin/index.ts — eidos (εἶδος) as a hephaistos first-party plugin.
+ * plugin/index.ts — stamp (εἶδος) as a hephaistos first-party plugin.
  *
  * VERIFIED against the consent plugin (the contract's reference shape):
  *   tools: [{ id, summary, register: async (server) => server.registerTool(
@@ -7,14 +7,14 @@
  *              handler) }]
  *   — NOT { name, description, inputSchema, handler } (my first guess was wrong).
  *
- * eidos = the FORGE: bun-scaffold's form-stamping, drop-in discovery, and
+ * stamp = the FORGE: bun-scaffold's form-stamping, drop-in discovery, and
  * AST-grep validation as hephaistos MCP tools. MCP is the integration.
  */
 import { z } from 'zod';
 import { definePlugin, type IMcpPluginContext, type IMcpPluginRegistrations } from '@hephaistos/core';
 import { discoverDropins, infraDropins } from '../src/scaffold-services.ts';
 
-export const name = 'eidos';
+export const name = 'stamp';
 
 const optionsSchema = z.object({
   pensRoot: z.string().default('/home/toxic/pens'),
@@ -32,7 +32,7 @@ export default definePlugin({
   register(ctx: IMcpPluginContext): IMcpPluginRegistrations {
     const parsed = optionsSchema.safeParse(ctx.options);
     const pensRoot = parsed.success ? parsed.data.pensRoot : '/home/toxic/pens';
-    const prefix = ctx.namespacePrefix || 'eidos';
+    const prefix = ctx.namespacePrefix || 'stamp';
 
     return {
       tools: [
@@ -136,9 +136,9 @@ export default definePlugin({
       ],
       knowledge: [
         {
-          name: 'eidos-forge-doctrine',
+          name: 'stamp-forge-doctrine',
           content:
-            'eidos (the forge) scaffolds form + discovers drop-ins. Parent of 27 products; 132 infra services from ports.env. Mutations via ctx.effects; options from hephaistos.config.json#plugins.eidos. Verified against the consent plugin contract shape.',
+            'stamp (the forge) scaffolds form + discovers drop-ins. Parent of 27 products; 132 infra services from ports.env. Mutations via ctx.effects; options from hephaistos.config.json#plugins.stamp. Verified against the consent plugin contract shape.',
         },
       ],
     };

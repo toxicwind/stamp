@@ -1,15 +1,15 @@
 /**
- * TDD contract for eidos-runtime — mise + pitchfork awareness.
+ * TDD contract for stamp-runtime — mise + pitchfork awareness.
  * Real-world: reads the actual ports.env SSOT; emits all three surfaces.
  */
 import { describe, expect, it } from "bun:test";
 import {
   nextFreePort, generateMiseToml, generatePitchforkStanza, generateDropinEnv, emitRuntimeWiring,
-} from "../src/eidos-runtime.ts";
+} from "../src/stamp-runtime.ts";
 
 const REAL = require("fs").readFileSync("/home/toxic/pens/Pens/config/ports.env", "utf8");
 
-describe("eidos runtime wiring (mise + pitchfork aware)", () => {
+describe("stamp runtime wiring (mise + pitchfork aware)", () => {
   it("1. nextFreePort finds a free Pens port from the real SSOT", () => {
     const p = nextFreePort(REAL);
     expect(p).toBeGreaterThanOrEqual(25200);
@@ -17,7 +17,7 @@ describe("eidos runtime wiring (mise + pitchfork aware)", () => {
     expect(REAL).not.toMatch(new RegExp(`=${p}\\b`));
   });
   it("2. generateMiseToml emits the gate set + ports.env SSOT import", () => {
-    const toml = generateMiseToml({ name: "eidos-demo", entry: "src/index.ts" });
+    const toml = generateMiseToml({ name: "stamp-demo", entry: "src/index.ts" });
     expect(toml).toContain(`_.file = "/home/toxic/pens/Pens/config/ports.env"`);
     expect(toml).toContain("[tasks.typecheck]");
     expect(toml).toContain("[tasks.validate]");

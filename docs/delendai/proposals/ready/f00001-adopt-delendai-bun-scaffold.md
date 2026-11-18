@@ -5,7 +5,7 @@ type: proposal
 track: adoption-migration
 date: 2026-10-20
 kind: feat
-title: Adopt delendai workflow (eidos)
+title: Adopt delendai workflow (stamp)
 shipped-in: []
 recan: []
 related:
@@ -21,7 +21,7 @@ acceptance:
     - { command: bun run validate, expect: exit0 }
 ---
 
-# f00001 — Adopt delendai (eidos)
+# f00001 — Adopt delendai (stamp)
 
 ## goal
 

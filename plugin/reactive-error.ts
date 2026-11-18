@@ -74,7 +74,7 @@ const FAMILIES: Family[] = [
 const RATE_LIMIT_DEFAULT_MS = 30_000;
 
 export function reactiveErrorPlugin(opts: ReactiveOpts = {}) {
-	const ledgerPath = opts.ledgerPath ?? "/home/toxic/.local/share/eidos/reactive-error-ledger.jsonl";
+	const ledgerPath = opts.ledgerPath ?? "/home/toxic/.local/share/stamp/reactive-error-ledger.jsonl";
 	const rateLimitMs = opts.rateLimitMs ?? RATE_LIMIT_DEFAULT_MS;
 	const lastReactionAt = new Map<ReactionClass, number>();
 	let reactionsFired = 0;

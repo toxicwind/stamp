@@ -1,5 +1,5 @@
 /**
- * model-matrix-lib-dropin.ts — 5-lane model contract matrix as an eidos
+ * model-matrix-lib-dropin.ts — 5-lane model contract matrix as an stamp
  * drop-in library. ANY test can assert "same call, same behavior" across the
  * Pens's five provider families via the live router (rhodochrosite :25193).
  *
@@ -11,7 +11,7 @@
  *   nvidia-family   — nvidia/llama-3.1-nemotron-safety-guard-8b-v3
  *
  * USAGE:
- *   import { modelMatrix } from "<eidos>/dropin/model-matrix-lib-dropin.ts";
+ *   import { modelMatrix } from "<stamp>/dropin/model-matrix-lib-dropin.ts";
  *   const mm = modelMatrix();
  *   const results = await mm.run(prompt, { timeoutMs: 25_000 });
  *   // results: { [family]: { ok, content?, err? } }

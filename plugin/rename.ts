@@ -1,6 +1,6 @@
 /**
  * plugin/rename.ts — the ONE rename engine as a hephaistos plugin.
- * Serves eidos (scaffold), bornite (mineral renames), and the pairs product
+ * Serves stamp (scaffold), bornite (mineral renames), and the pairs product
  * (merge index) — replacing the 4-way scatter (bun engine + bornite python +
  * pairs python + azurite stale copies, all archived 2026-10-30).
  */

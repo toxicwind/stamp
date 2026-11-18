@@ -14,7 +14,7 @@
  * --llm (rides DelendAI lllm-client conventions + freeinference deepseek).
  */
 
-import { completeOver, type ChatMsg } from "./eidos-bridge";
+import { completeOver, type ChatMsg } from "./stamp-bridge";
 import { scanPackageJsons } from "./detect-bizarre-package-json";
 import {
   readFileSync,
@@ -93,7 +93,7 @@ function hasSubmoduleGit(dir: string): boolean {
 
 async function main() {
   banner(
-    `eidos apply — root=${ROOT} target=${TARGET ?? "auto"} llm=${USE_LLM} dry=${DRY_RUN}`,
+    `stamp apply — root=${ROOT} target=${TARGET ?? "auto"} llm=${USE_LLM} dry=${DRY_RUN}`,
   );
 
   if (!USE_LLM && !TARGET && !BULK) {
@@ -165,7 +165,7 @@ async function main() {
       if (env && !env.startsWith("#")) {
         const bunfigPath = `${TARGET}/bunfig.toml`;
         const existing = existsSync(bunfigPath) ? readFileSync(bunfigPath, "utf8") : SCAFFOLD_BUNFIG;
-        const withEnv = `${existing}\n# infra drop-ins (discovered from config/ports.env by eidos)\n${env.split("\n").map((l) => `  ${l}`).join("\n")}\n`;
+        const withEnv = `${existing}\n# infra drop-ins (discovered from config/ports.env by stamp)\n${env.split("\n").map((l) => `  ${l}`).join("\n")}\n`;
         write(bunfigPath, withEnv);
       } else {
         write(`${TARGET}/bunfig.toml`, SCAFFOLD_BUNFIG);

@@ -1,8 +1,8 @@
 /**
  * agent-relaunch-lib-dropin.ts — daemon-aware agent discovery/diagnosis/relaunch
- * as an eidos drop-in library.
+ * as an stamp drop-in library.
  *
- * Ground truth doctrine: docs lie, /proc wins (eidos AGENTS.md rule 6).
+ * Ground truth doctrine: docs lie, /proc wins (stamp AGENTS.md rule 6).
  * Discovery = pitchfork state + /proc cmdline sweep. Diagnosis = root-cause
  * classes mined from the Pens's anomaly program (#41 dir-ENOENT, #43 mise,
  * #5 front-door-vs-exec, #72 credit strikes, #48 ghost lease).

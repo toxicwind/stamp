@@ -1,11 +1,11 @@
 /**
- * tdd-adapter-lib-dropin.ts — devloop's hook-payload adapter as an eidos
+ * tdd-adapter-lib-dropin.ts — devloop's hook-payload adapter as an stamp
  * drop-in library (Bun-native, verbatim shape borrow).
  *
  * devloop (compforge) ships the PreToolUse/PostToolUse hook contract:
  *   HookPayload { hook_event_name, tool_name, tool_input, cwd, session_id }
  *   preToolDecision(payload) → { hookSpecificOutput, systemMessage } | {}
- * Borrowed so eidos-parented products share ONE hook payload shape with the
+ * Borrowed so stamp-parented products share ONE hook payload shape with the
  * devloop eval loop.
  */
 export interface HookPayload {

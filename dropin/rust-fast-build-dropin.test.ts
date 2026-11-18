@@ -5,7 +5,7 @@ import { join } from "node:path";
 import { applyRustFastBuild, RUST_FAST_BUILD_TEMPLATE } from "./rust-fast-build-lib-dropin.ts";
 
 function tmpProject(cargoToml?: string): string {
-  const dir = mkdtempSync(join(tmpdir(), "eidos-rust-fast-"));
+  const dir = mkdtempSync(join(tmpdir(), "stamp-rust-fast-"));
   if (cargoToml !== undefined) writeFileSync(join(dir, "Cargo.toml"), cargoToml);
   return dir;
 }

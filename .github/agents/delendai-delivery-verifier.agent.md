@@ -1,7 +1,7 @@
 ---
 name: delendai-delivery-verifier
 description: Acceptance and gates verifier
-tools: [read, search, edit, execute, todo, DelendAI:Pens-eidos/*]
+tools: [read, search, edit, execute, todo, DelendAI:Pens-stamp/*]
 user-invocable: false
 ---
 

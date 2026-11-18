@@ -1,6 +1,6 @@
 {
 	"servers": {
-		"DelendAI:Pens-eidos": {
+		"DelendAI:Pens-stamp": {
 			"type": "stdio",
 			"command": "bunx",
 			"args": [
@@ -11,7 +11,7 @@
 				"--workspace",
 				"${workspaceFolder}",
 				"--name",
-				"DelendAI:Pens-eidos"
+				"DelendAI:Pens-stamp"
 			]
 		}
 	}
